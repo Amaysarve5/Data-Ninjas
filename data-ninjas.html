@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Hub</title>
+    
+        <h2></h2>
+        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #edecec;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 50%;
+            margin: auto;
+        }
+
+        form, #courseSection {
+            display: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edu-Hub</h1>
+        <img src="https://tse4.mm.bing.net/th?id=OIP.YIjTJKTzfJajX1DfQq71GwHaFI&pid=Api&P=0&h=180" alt="Education Hub Logo" style="max-width: 200%;">
+    </header>
+
+    <nav>
+        <a href="#" onclick="showRegistration()">Home</a>
+        <a href="#" onclick="showCourses()">Courses</a>
+    </nav>
+    
+
+    <section>
+        <div id="registrationSection">
+            <h2>Student Registration</h2>
+            <form id="registrationForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="python">Python</option>
+                    <option value="c">C</option>
+                    <option value="html">HTML</option>
+                </select>
+
+                <button type="button" onclick="registerAndShowCourses()">Register</button>
+            </form>
+        </div>
+
+        <div id="courseSection">
+            <!-- Course content will be dynamically updated -->
+        </div>
+    </section>
+    <section>
+        <div id="registrationSection">
+            <!-- Your registration form content -->
+        </div>
+    
+        <div id="courseSection">
+            <!-- Course content will be dynamically updated -->
+        </div>
+    
+        <div id="aboutUsSection">
+            <h2>About Us</h2>
+            <p>Welcome to Education Hub, your premier destination for high-quality online learning. At Education Hub, we believe in the power of education to transform lives and open doors to endless opportunities. Our platform is dedicated to providing a diverse range of courses, empowering learners to acquire new skills and knowledge from the comfort of their homes.</p>
+            <p>Our team of experienced educators and industry professionals curate engaging and interactive content, ensuring that each course is not only informative but also enjoyable. Whether you are a beginner or an experienced professional looking to upskill, Education Hub is here to support your learning journey.</p>
+            <p>Explore our courses, register today, and embark on a path of continuous growth and development. Join our vibrant community of learners and let Education Hub be your trusted partner in the pursuit of knowledge.</p>
+        </div>
+        <section id="contactUsSection">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, feel free to reach out to us. We are here to assist you!</p>
+            <p>Email: info@educationhub.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+        </section>
+    
+    
+    <script>
+        function showRegistration() {
+            document.getElementById("registrationSection").style.display = "block";
+            document.getElementById("courseSection").style.display = "none";
+        }
+
+        function showCourses() {
+            document.getElementById("registrationSection").style.display = "none";
+            document.getElementById("courseSection").style.display = "block";
+        }
+
+        function registerAndShowCourses() {
+            // You can add validation or form submission logic here
+
+            // For now, let's directly show the course section after registration
+            let selectedCourse = document.getElementById("course").value;
+            document.getElementById("courseSection").innerHTML = `<h2>${selectedCourse} Course</h2><p>Explore your favorite  ${selectedCourse}<a href="${getCourseLink(selectedCourse)}">(For Beginner) Cources</a>.</p>`;
+            showCourses();
+            alert("Registration Successful!");
+        }
+
+        function getCourseLink(course) {
+            // Replace the '#' with the actual link to the corresponding course page
+            switch(course) {
+                case "python":
+                    return "https://r.search.yahoo.com/_ylt=AwrKABKqD89ls5cHlx.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1708097579/RO=10/RU=https%3a%2f%2fwww.youtube.com%2fplaylist%3flist%3dPLu0W_9lII9agwh1XjRt242xIpHhPT2llg/RK=2/RS=oOAOvLdXCZ8re90RD7P4ngk1C2k-";
+                    
+                case "c":
+                    return "https://r.search.yahoo.com/_ylt=Awrx_NU7Es9ljP0HXly7HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1708098235/RO=10/RU=https%3a%2f%2fwww.youtube.com%2fwatch%3fv%3dZSPZob_1TOk/RK=2/RS=_67oIwumvLxhHE9mFCNKtfkHztk-";
+                    
+                case "html":
+                    return "https://r.search.yahoo.com/_ylt=Awr1SbRbEs9lfEkI4Am7HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1708098268/RO=10/RU=https%3a%2f%2fwww.youtube.com%2fwatch%3fv%3d6mbwJ2xhgzM/RK=2/RS=XjPAYPcoDlJ5sBts052UT4eUGL4-";
+                default:
+                    return "#";
+            }
+        }
+    </script>
+</body>
+</html>
